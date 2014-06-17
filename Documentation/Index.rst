@@ -3,30 +3,25 @@
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-===========================
 Form Grids: Grid Layout for Typo3 Mailform
 ===========================
 
-:Rendered:
-      |today|
+Extension Key: formgrids
 
-:Classification:
-      formgrids
+:Language: en
+:Rendered: |today|
 
-:Keywords:
-      forEditors, forAdmins, forBeginners, forIntermediates
+Keywords: forEditors, forAdmins, forBeginners, forIntermediates
 
-:Author:
-      Ben Walch
+Copyright 2014, Ben Walch, <ben.walch@world-direct.at>
 
-:Email:
-      ben.walch@world-direct.at
+This document is published under the Open Content License
 
+available from http://www.opencontent.org/opl.shtml
 
+The content of this document is related to TYPO3
 
-
-:Language:
-      en
+\- a GNU/GPL CMS/Framework available from www.typo3.org
 
 
 .. toctree::
@@ -34,5 +29,5 @@ Form Grids: Grid Layout for Typo3 Mailform
    :titlesonly:
    :glob:
 
-   Main/Index
-
+   Introduction/Index
+   UsersManual/Index
