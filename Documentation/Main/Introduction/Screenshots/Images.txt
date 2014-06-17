@@ -1,0 +1,14 @@
+.. |img-1|      image:: ../../Images/Manual/img-1.jpg
+.. :align: left
+.. :border: 0
+.. :height: 239
+.. :name: Image1
+.. :width: 754
+
+.. |img-2|      image:: ../../Images/Manual/img-2.jpg
+.. :align: left
+.. :border: 0
+.. :height: 531
+.. :name: Image2
+.. :width: 228
+
