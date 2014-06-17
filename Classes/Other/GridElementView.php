@@ -39,7 +39,7 @@ class GridElementView extends \TYPO3\CMS\Form\View\Form\Element\ContainerElement
 	 */
 	protected $layout = '
 		<div>
-                    <elements />
+            <elements />
 		</div>
 	';
         
@@ -53,10 +53,10 @@ class GridElementView extends \TYPO3\CMS\Form\View\Form\Element\ContainerElement
 	public function getChildElements(\DOMDocument $dom) {
 		$modelChildren = $this->model->getElements();
 		$documentFragment = $dom->createDocumentFragment();
-                $childrenClasses = $this->model->getChildrenClasses();
+        $childrenClasses = $this->model->getChildrenClasses();
 		foreach ($modelChildren as $key => $modelChild) {
 			$class = (array_key_exists('id-' . $modelChild->getElementId(), $childrenClasses)) ? $childrenClasses['id-' . $modelChild->getElementId()] . ' ' : '';
-                        $child = $this->createChildElementFromModel($modelChild);
+			$child = $this->createChildElementFromModel($modelChild);
 			if ($child->noWrap() === TRUE) {
 				$childNode = $child->render();
 			} else {
@@ -108,7 +108,7 @@ class GridElementView extends \TYPO3\CMS\Form\View\Form\Element\ContainerElement
 
 						case 'form':
                                                     
-                                                case 'div':
+                        case 'div':
 
 						case 'input':
 

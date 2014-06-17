@@ -45,34 +45,35 @@ class WizardViewHook { // TYPO3\CMS\Form\View\Wizard\WizardView
      * @param \TYPO3\CMS\Form\View\Wizard\WizardView $wizardView
      */
     public function initialize($params, $wizardView) {
-	$this->wizardView = $wizardView;
-              
-	$this->loadJavascript();
-	$this->loadCss();
+		$this->wizardView = $wizardView;
+				  
+		$this->loadJavascript();
+		$this->loadCss();
     }
     
     public function loadJavascript() {	
-	$baseUrl = \TYPO3\CMS\Core\Utility\GeneralUtility::resolveBackPath('../../../../../' . \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath('formgrids') . 'Resources/Public/JavaScript/Wizard/');
-	$javascriptFiles = array(
-	    'Elements/Global.js',
-	    'Elements/Special/Grid.js',
-	    'Viewport/Left/Elements/Special.js',
-	);
-	// Load the additional javascript for form wizard
-	foreach ($javascriptFiles as $javascriptFile) {
-	    $this->wizardView->doc->getPageRenderer()->addJsFile($baseUrl . $javascriptFile, 'text/javascript', TRUE, FALSE);
-	}
+		$baseUrl = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('formgrids') . 'Resources/Public/JavaScript/Wizard/';
+		$javascriptFiles = array(
+			'Elements/Global.js',
+			'Elements/Special/Grid.js',
+			'Viewport/Left/Elements/Special.js',
+		);
+		
+		// Load the additional javascript for form wizard
+		foreach ($javascriptFiles as $javascriptFile) {
+			$this->wizardView->doc->getPageRenderer()->addJsFile($baseUrl . $javascriptFile, 'text/javascript', TRUE, FALSE);
+		}
     }
     
     public function loadCss() {
-	$baseUrl = \TYPO3\CMS\Core\Utility\GeneralUtility::resolveBackPath('../../../../../' . \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath('formgrids') . 'Resources/Public/Css/Wizard/');
-	$cssFiles = array(
-	    'Wizard.css',
-	);
-	// Load the additional javascript for form wizard
-	foreach ($cssFiles as $cssFile) {
-	    $this->wizardView->doc->getPageRenderer()->addCssFile($baseUrl . $cssFile, 'stylesheet', 'all', '', FALSE, FALSE);
-	}
+		$baseUrl = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('formgrids') . 'Resources/Public/Css/Wizard/';
+		$cssFiles = array(
+			'Wizard.css',
+		);
+		// Load the additional javascript for form wizard
+		foreach ($cssFiles as $cssFile) {
+			$this->wizardView->doc->getPageRenderer()->addCssFile($baseUrl . $cssFile, 'stylesheet', 'all', '', FALSE, FALSE);
+		}
     }
 
 }

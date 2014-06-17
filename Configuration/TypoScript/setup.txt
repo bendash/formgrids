@@ -1,0 +1,14 @@
+tt_content.mailform.20 {
+	layout {
+		containerWrap (
+			<div class="csc-mailform-container">
+				<elements />
+			</div>
+		)
+		elementWrap (
+			<div>
+				<element />
+			</div>
+		)
+	}
+}

@@ -1,40 +1,41 @@
 mod.wizards {
     form {
-	defaults {
-	    tabs {
+		defaults {
+			tabs {
+				elements {
+					showAccordions := addToList(special)
+					accordions {
+						special {
+							showButtons = grid
+						}
+					}
+				}
+				options {
+					accordions {
+						attributes {
+							showProperties := addToList(containerClass)
+						}
+					}
+				}
+			}
+		}
 		elements {
-		    showAccordions := addToList(special)
-		    accordions {
-			special {
-			    showButtons = grid
+			grid {
+				showAccordions = attributes
+				accordions {
+					attributes {
+						showProperties = class
+					}
+				}
 			}
-		    }
-		}
-		options {
-		    accordions {
-			attributes {
-			    showProperties := addToList(containerClass)
+			textline {
+				showAccordions := addToList(various)
+				accordions {
+					attributes {
+						showProperties := addToList(class, containerClass)
+					}
+				}
 			}
-		    }
 		}
-	    }
 	}
-	elements {
-	    grid {
-		showAccordions = attributes
-		accordions {
-		    attributes {
-		        showProperties = class
-		    }
-		}
-	    }
-            textline {
-		showAccordions := addToList(various)
-		accordions {
-		    attributes {
-			showProperties := addToList(class, containerClass)
-		    }
-	    }
-	}
-    }
 }
