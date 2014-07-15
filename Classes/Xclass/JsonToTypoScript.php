@@ -120,9 +120,9 @@ class JsonToTypoScript extends \TYPO3\CMS\Form\Domain\Factory\JsonToTypoScript {
 		switch ($category) {
 			case 'special':
 			    switch ($type) {
-				case 'grid':
-				    $contentObjectType = strtoupper($type);
-				    break;
+					case 'grid':
+						$contentObjectType = strtoupper($type);
+						break;
 			    }
 			    break;
 			default:
@@ -131,6 +131,47 @@ class JsonToTypoScript extends \TYPO3\CMS\Form\Domain\Factory\JsonToTypoScript {
 
 		}
 		return $contentObjectType;
+	}
+	
+	/**
+	 * Iterates over the various configuration settings and calls the
+	 * appropriate function for each setting
+	 *
+	 * @param array $element The JSON array for this element
+	 * @param array $parent The parent element
+	 * @param integer $elementCounter The element counter
+	 * @param boolean $childrenWithParentName Indicates if the children use the parent name
+	 * @return void
+	 */
+	protected function setConfiguration(array $element, array &$parent, $elementCounter, $childrenWithParentName = FALSE) {
+		parent::setConfiguration($element, $parent, $elementCounter, $childrenWithParentName);
+		foreach ($element['configuration'] as $key => $value) {
+			switch ($key) {
+				case 'grid':
+					$this->setGrid($element, $value, $parent, $elementCounter);
+					break;
+				default:
+			}
+		}
+	}
+	
+	/**
+	 * Set the various configuration of an element
+	 *
+	 * @param array $element The JSON array for this element
+	 * @param array $options The JSON array for the various options of this element
+	 * @param array $parent The parent element
+	 * @param integer $elementCounter The element counter
+	 * @return void
+	 */
+	protected function setGrid(array $element, array $grid, array &$parent, $elementCounter) {
+		foreach ($grid as $key => $value) {
+			switch ($key) {
+				case 'containerClass':
+					$parent[$elementCounter . '.'][$key] = (string) $value;
+					break;
+			}
+		}
 	}
 
 }

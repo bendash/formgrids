@@ -27,7 +27,7 @@ TYPO3.Form.Wizard.Viewport.Left.Elements.Special = Ext.extend(TYPO3.Form.Wizard.
 	 * The title text to be used as innerHTML (html tags are accepted) to
 	 * display in the panel header (defaults to '').
 	 */
-	title: 'Special', //TYPO3.l10n.localize('left_elements_content')
+	title: TYPO3.l10n.localize('left_elements_special'),
 
 	/**
 	 * Constructor
@@ -42,7 +42,7 @@ TYPO3.Form.Wizard.Viewport.Left.Elements.Special = Ext.extend(TYPO3.Form.Wizard.
 			switch (option) {
 				case 'grid':
 					buttons.push({
-						text: 'Grid Element', //TYPO3.l10n.localize('special_grid')
+						text: TYPO3.l10n.localize('special_grid'),
 						id: 'special-grid',
 						clickEvent: 'dblclick',
 						handler: this.onDoubleClick,

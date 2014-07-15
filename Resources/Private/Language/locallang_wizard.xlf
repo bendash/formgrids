@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-06-24T15:45:33Z" product-name="formgrids">
+		<header/>
+		<body>
+			<trans-unit id="left_elements_special" xml:space="preserve">
+				<source>Special</source>
+			</trans-unit>
+			<trans-unit id="special_grid" xml:space="preserve">
+				<source>Grid Element</source>
+			</trans-unit>
+			<trans-unit id="options_grid" xml:space="preserve">
+				<source>Grid Properties</source>
+			</trans-unit>
+			<trans-unit id="grid_properties_containerclass" xml:space="preserve">
+				<source>Container Class</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

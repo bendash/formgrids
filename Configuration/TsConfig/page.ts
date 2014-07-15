@@ -10,13 +10,6 @@ mod.wizards {
 						}
 					}
 				}
-				options {
-					accordions {
-						attributes {
-							showProperties := addToList(containerClass)
-						}
-					}
-				}
 			}
 		}
 		elements {
@@ -28,14 +21,18 @@ mod.wizards {
 					}
 				}
 			}
-			textline {
-				showAccordions := addToList(various)
-				accordions {
-					attributes {
-						showProperties := addToList(class, containerClass)
-					}
-				}
-			}
+			textline.showAccordions := addToList(grid)
+			textarea.showAccordions := addToList(grid)
+			checkboxgroup.showAccordions := addToList(grid)
+			checkbox.showAccordions := addToList(grid)
+			radiogroup.showAccordions := addToList(grid)
+			radio.showAccordions := addToList(grid)
+			fieldset.showAccordions := addToList(grid)
+			fileupload.showAccordions := addToList(grid)
+			password.showAccordions := addToList(grid)
+			email.showAccordions := addToList(grid)
+			header.showAccordions := addToList(grid)
+			textblock.showAccordions := addToList(grid)
 		}
 	}
 }

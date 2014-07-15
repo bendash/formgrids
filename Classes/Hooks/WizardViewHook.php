@@ -46,17 +46,23 @@ class WizardViewHook { // TYPO3\CMS\Form\View\Wizard\WizardView
      */
     public function initialize($params, $wizardView) {
 		$this->wizardView = $wizardView;
-				  
+		
+		$this->loadLocalization();
 		$this->loadJavascript();
 		$this->loadCss();
     }
     
+	public function loadLocalization() {
+		$wizardLabels = $GLOBALS['LANG']->includeLLFile('EXT:formgrids/Resources/Private/Language/locallang_wizard.xlf', FALSE, TRUE);
+		$this->wizardView->doc->getPageRenderer()->addInlineLanguageLabelArray($wizardLabels['default']);	
+	}
+	
     public function loadJavascript() {	
 		$baseUrl = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('formgrids') . 'Resources/Public/JavaScript/Wizard/';
 		$javascriptFiles = array(
-			'Elements/Global.js',
 			'Elements/Special/Grid.js',
 			'Viewport/Left/Elements/Special.js',
+			'Viewport/Left/Options/Forms/Grid.js'
 		);
 		
 		// Load the additional javascript for form wizard

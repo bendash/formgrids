@@ -45,7 +45,7 @@ class TypoScriptToJsonConverter extends \TYPO3\CMS\Form\Utility\TypoScriptToJson
 	public function addElement(\TYPO3\CMS\Form\Domain\Model\Json\AbstractJsonElement $parentElement, $class, array $arguments) {
 		$element = $this->createElement($class, $arguments);
 		if(\TYPO3\CMS\Form\Utility\FormUtility::getInstance()->getLastPartOfClassName($parentElement, TRUE) == 'grid') {
-			//$element->setAllowedAttributes(array_merge($element->getAllowedAttributes(), array('containerClass' => '')));
+			$element->configuration = array_merge($element->configuration, array('grid' => array('containerClass' => $arguments['containerClass'])));
 		}
 		$parentElement->addElement($element);
 	}
