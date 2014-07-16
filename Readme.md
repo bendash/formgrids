@@ -99,7 +99,11 @@ The layout of the form fields can be configured out of the box for the form syst
 
 In this example, twitter bootstrap css classes are used to get a nice and beautiful form with support of the grid system of the css framework.
 
-Hint: The form sysext of TYPO3 has a bug, which ignores classes set for elementWrap: https://forge.typo3.org/issues/48404
+### Hints ###
+
+Please make sure that your form elementWrap is rendered as a div tag, not li! Otherwise formgrids won't work!
+
+The form sysext of TYPO3 has a bug, which ignores classes set for elementWrap: https://forge.typo3.org/issues/48404
 Without the patch provided in the issue, it is not possible to define a custom class for elementWraps outside a grid element.
 
 ## ToDos ##
