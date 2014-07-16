@@ -56,7 +56,7 @@ This configuration will output a HTML structure like this:
         </div>
         <div class="col-md-6 form-group csc-form-4 csc-form-element csc-form-element-textline">
             <label for="field-4">Email</label>
-            <input class="form-control" id="field-4" name="tx_form[asf]" type="text">
+            <input class="form-control" id="field-4" name="tx_form[email]" type="text">
         </div>
     </div>
 
